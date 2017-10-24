@@ -19,9 +19,7 @@ Then you probably thought:
 
 You can forget about this and use Yopp instead:
 
-[[VIDEO]]
-
-
+<img src="https://i.imgur.com/KqcRwXY.gif" />
 
 Installation
 ----
