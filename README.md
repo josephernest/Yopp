@@ -19,7 +19,8 @@ Then you probably thought:
 
 You can forget about this and use Yopp instead:
 
-<img src="https://i.imgur.com/KqcRwXY.gif" />
+<img src="https://i.imgur.com/KqcRwXY.gif" height="300" />
+
 
 Installation
 ----
