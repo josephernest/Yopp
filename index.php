@@ -92,7 +92,7 @@ function readfiles(files) {
     formData.append('fname', files[0].name);
     formData.append('data', files[0]);
     formData.append('email', document.getElementById('email_addr').value);
-    uploadtext.innerHTML = 'BEGINNING ULPOAD';
+    uploadtext.innerHTML = 'BEGINNING UPLOAD';
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '.');
     xhr.onload = function() { uploadtext.innerHTML =  xhr.responseText; };
@@ -100,7 +100,7 @@ function readfiles(files) {
         if (event.lengthComputable) {
             var complete = (event.loaded / event.total * 100 | 0);
             var complete36 = (event.loaded / event.total * 36 | 0);
-            uploadtext.innerHTML = 'ULPOADING<br>PROGRESS '+ complete + '%';
+            uploadtext.innerHTML = 'UPLOADING<br>PROGRESS '+ complete + '%';
         }
     };
     xhr.send(formData);
