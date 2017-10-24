@@ -9,7 +9,7 @@ or
 
 *"How do I get this PDF from my computer to my phone?"*
 
-Then you probably thought about:
+Then you probably thought:
 
 * Let's use Dropbox! ... oh no I'm not logged in on my phone, but what is my password again?
 
