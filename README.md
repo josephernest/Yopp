@@ -32,7 +32,7 @@ How does it work?
 
 * Only **one** file will stay on the server, so each time you upload a new file, the previous file will be deleted.
 
-* By default, the file will be deleted on server after first download.
+* By default, the file will be deleted on server after it has been downloaded once.
 
 
 What about security?
