@@ -7,7 +7,7 @@ Have you ever spent more than 1 second wondering:
 
 or
 
-*"How do I get this PDF from my computer to my phone?"
+*"How do I get this PDF from my computer to my phone?"*
 
 Then you probably thought about:
 
