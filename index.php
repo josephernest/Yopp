@@ -1,12 +1,11 @@
-<!-- 
-# Yopp is a very fast way to transfer a file from phone to computer and vice versa.
-# 
-# author:   Joseph Ernest (twitter: @JosephErnest)
-# url:      https://github.com/josephernest/Yopp
-# license:  MIT license
--->
-
 <?php
+/*  
+    Yopp is a very fast way to transfer a file from phone to computer and vice versa.
+
+    author:   Joseph Ernest (twitter: @JosephErnest)
+    url:      https://github.com/josephernest/yopp
+    license:  MIT license
+*/
 
 $maxsize = 50*1024*1024;       // 50 MB
 $thefiledata = 'thefiledata';  // file which contains the data
