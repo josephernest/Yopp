@@ -17,14 +17,14 @@ Then you probably thought:
 
 * I should just use a USB cable... but where is my USB cable again?
 
-You can forget about this and use Yopp instead:
+You can forget about this and use **Yopp** instead:
 
 <img src="https://i.imgur.com/QzpdbzA.gif" />
 
 
 Installation
 ----
-Create a folder on your server and put the `index.php` file, that's it!
+Create a folder on your server and put `index.php` there, that's it!
 
 How does it work?
 ----
