@@ -41,6 +41,8 @@ What about security?
 
 * Tip: use a random folder name (e.g. http://www.example.com/xHsy279q1/), and don't share the URL
 
+* There's only ~ 100 lines of PHP code, so you can easily read it or tweak it yourself!
+
 About
 ----
 
