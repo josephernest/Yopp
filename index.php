@@ -14,10 +14,10 @@ $autoeraseafterdownload = 1;   // delete file after a download
 
 if (isset($_POST['type']) && $_POST['type'] == 'upload')
 {  
-    if (empty($_FILES['data']['tmp_name'])) { echo 'ERROR'; die(); }          // no file sent
-    if (!empty($_POST['email'])) { echo 'ERROR'; die(); }                     // spam honeypot
-    if ($_POST['fname'] !== $_FILES['data']['name']) { echo 'ERROR'; die(); } // someone wants to cheat?
-    if ($_FILES['data']['size'] > $maxsize) { echo 'TOO BIG!'; die(); }       // too big file
+    if (empty($_FILES['data']['tmp_name'])) { die('ERROR'); }          // no file sent
+    if (!empty($_POST['email'])) { die('ERROR'); }                     // spam honeypot
+    if ($_POST['fname'] !== $_FILES['data']['name']) { die('ERROR'); } // someone wants to cheat?
+    if ($_FILES['data']['size'] > $maxsize) { die('TOO BIG!'); }       // too big file
 
     $localfname = $_POST['fname'];
 
@@ -31,7 +31,7 @@ if (isset($_POST['type']) && $_POST['type'] == 'upload')
     fwrite($filename, $localfname);
     fclose($filename);
     
-    echo 'DONE'; die();
+    die('DONE');
 }
 
 if (isset($_GET['type']) && $_GET['type'] == 'download')
