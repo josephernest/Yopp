@@ -38,7 +38,7 @@ if (isset($_GET['type']) && $_GET['type'] == 'download')
 {
     if (!file_exists($thefiledata) || !file_exists($thefilename))
     {
-        echo '<html><head><meta name="viewport" content="width=device-width, initial-scale=1.0" /></head><body><a href="index.php">NO FILE UPLOADED YET, RELOAD PAGE</a></body></html>';
+        echo '<html><head><meta content="width=device-width, initial-scale=1.0" name="viewport"><style type="text/css">*{color:white;font-family:sans-serif;padding:0em;margin:0;cursor:pointer;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}body{width:100%;top:0;position:absolute;background-color:#f90;height:100%;left:0}a{position:absolute;top:0;height:100%;text-align:center;width:100%;text-decoration:none;display:block}a div{position:relative;top:45%;height:auto;text-align:center;width:100%;font-size:2.5em;text-decoration:none}a span{font-size:70%}</style><title></title></head><body> <a href="./"><div>NO FILE UPLOADED YET<br /><span>CLICK TO RELOAD</span></div></a></body></html>';
         exit;
     }
     $fname = file_get_contents($thefilename);
