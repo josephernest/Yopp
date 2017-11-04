@@ -38,7 +38,22 @@ if (isset($_GET['type']) && $_GET['type'] == 'download')
 {
     if (!file_exists($thefiledata) || !file_exists($thefilename))
     {
-        echo '<html><head><meta name="viewport" content="width=device-width, initial-scale=1.0" /></head><body><a href="index.php">NO FILE UPLOADED YET, RELOAD PAGE</a></body></html>';
+        echo '
+        <html>
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Yopp</title>
+                <style type="text/css">
+                    * { color: white; font-family: sans-serif;  padding: 0; margin: 0; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+                    #nofile { width: 100%; top: 0; position: absolute; background-color: #f44242; height: 50%; }
+                    .text { position: absolute; top: 40%; text-align: center; width: 100%; font-size: 3em; }
+                </style>
+            </head>
+            <body>
+            <a href="index.php?" id="nofile"><div class="text">NO FILE UPLOADED YET, CLICK TO RELOAD PAGE</div></a>
+            </body>
+        </html>
+        ';
         exit;
     }
     $fname = file_get_contents($thefilename);
