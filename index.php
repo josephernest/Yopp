@@ -56,7 +56,6 @@ if (isset($_GET['type']) && $_GET['type'] == 'download')
         {
             unlink($thefiledata);
             unlink($thefilename);
-            unlink($thefilecode);
         }
     exit;
 }
