@@ -40,74 +40,19 @@
 		exit;
 	}
 ?>
-
 <html>
 	<head>
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
-		<style type="text/css">
-			*{
-				color:white;
-				font-family:sans-serif;
-				padding:0em;
-				margin:0;
-				-webkit-touch-callout:none;
-				-webkit-user-select:none;
-				-khtml-user-select:none;
-				-moz-user-select:none;
-				-ms-user-select:none;
-				user-select:none
-			}
-
-			body{
-				width:100%;
-				top:0;
-				position:
-				absolute;
-				background-color:#f90;
-				height:100%;
-				left:0
-			}
-
-			div{
-				position:absolute;
-				top:45%;
-				height:auto;
-				text-align:center;
-				width:100%;
-				font-size: 2em;
-				text-decoration:none;
-				display:block
-			}
-
-			input[type="text"] {
-				-webkit-appearance : none;
-				color: black;
-				text-align: center;
-				height: 2em;
-				margin-bottom: 5px;
-			}
-
-			input[type="submit"] {
-				-webkit-appearance : none;
-				height : 2em;
-				color : black;
-			}
-
-		</style>
+		<style type="text/css">*{color:white;font-family:sans-serif;padding:0em;margin:0;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}body{width:100%;top:0;position:absolute;background-color:#f90;height:100%;left:0}div{position:absolute;top:45%;height:auto;text-align:center;width:100%;font-size: 2em;text-decoration:none;display:block}input[type="text"] {-webkit-appearance : none;color: black;text-align: center;height: 2em;margin-bottom: 5px;}input[type="submit"] {-webkit-appearance : none;height : 2em;color : black;}</style>
 		<title>Yopp</title>
 	</head>
-
 	<body> 
 		<div>
-
 			ENTER CODE TO DOWNLOAD <br>
-			
 			<form method="POST" >
 				<input type="text" name="randomcodeinput" maxlength="4" /> <br>
 				<input type="submit" name="downloadbtn" value="Get my file!" />
 			</form>
-
-
 		</div>
 	</body>
 </html>
