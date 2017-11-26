@@ -24,7 +24,7 @@ You can forget about this and use **Yopp** instead:
 
 Installation
 ----
-Create a folder on your server and put `index.php` there, that's it!
+Create a folder on your server and put `index.php` there, that's it! (Don't forget to give write permission to this folder).
 
 How does it work?
 ----
