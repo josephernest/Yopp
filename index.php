@@ -99,7 +99,6 @@ function readfiles(files) {
     xhr.upload.onprogress = function(event) {
         if (event.lengthComputable) {
             var complete = (event.loaded / event.total * 100 | 0);
-            var complete36 = (event.loaded / event.total * 36 | 0);
             uploadtext.innerHTML = 'UPLOADING<br>PROGRESS '+ complete + '%';
         }
     };
@@ -110,7 +109,7 @@ document.body.ondragover = function() { uploadtext.innerHTML = 'DROP YOUR FILE H
 
 document.body.ondrop = function(e) { e.preventDefault();  readfiles(e.dataTransfer.files); };
 
-fileelt.addEventListener("change", function(e) { readfiles(fileelt.files); })
+fileelt.addEventListener("change", function() { readfiles(fileelt.files); })
 </script>
 </body>
 </html>
