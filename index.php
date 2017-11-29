@@ -23,11 +23,11 @@ if (isset($_POST['type']) && $_POST['type'] === 'upload')
 
     $data = file_get_contents($_FILES['data']['tmp_name']);
 
-    $file = fopen($thefiledata, 'w');
+    $file = fopen($thefiledata, 'wb');
     fwrite($file, $data);
     fclose($file);
 
-    $filename = fopen($thefilename, 'w');
+    $filename = fopen($thefilename, 'wb');
     fwrite($filename, $localfname);
     fclose($filename);
     
