@@ -12,7 +12,7 @@ $thefiledata = 'thefiledata';  // file which contains the data
 $thefilename = 'thefilename';  // file which contains only the filename
 $autoeraseafterdownload = 1;   // delete file after a download
 
-if (isset($_POST['type']) && $_POST['type'] == 'upload')
+if (isset($_POST['type']) && $_POST['type'] === 'upload')
 {  
     if (empty($_FILES['data']['tmp_name'])) { die('ERROR'); }          // no file sent
     if (!empty($_POST['email'])) { die('ERROR'); }                     // spam honeypot
@@ -34,7 +34,7 @@ if (isset($_POST['type']) && $_POST['type'] == 'upload')
     die('DONE');
 }
 
-if (isset($_GET['type']) && $_GET['type'] == 'download')
+if (isset($_GET['type']) && $_GET['type'] === 'download')
 {
     if (!file_exists($thefiledata) || !file_exists($thefilename))
     {
