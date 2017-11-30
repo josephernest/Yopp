@@ -12,7 +12,7 @@ $thefiledata = 'thefiledata';  // file which contains the data
 $thefilename = 'thefilename';  // file which contains only the filename
 $autoeraseafterdownload = 1;   // delete file after a download
 
-if (isset($_POST['type']) && $_POST['type'] == 'upload')
+if (isset($_POST['type']) && $_POST['type'] === 'upload')
 {  
     if (empty($_FILES['data']['tmp_name'])) { die('ERROR'); }          // no file sent
     if (!empty($_POST['email'])) { die('ERROR'); }                     // spam honeypot
@@ -23,22 +23,22 @@ if (isset($_POST['type']) && $_POST['type'] == 'upload')
 
     $data = file_get_contents($_FILES['data']['tmp_name']);
 
-    $file = fopen($thefiledata, 'w');
+    $file = fopen($thefiledata, 'wb');
     fwrite($file, $data);
     fclose($file);
 
-    $filename = fopen($thefilename, 'w');
+    $filename = fopen($thefilename, 'wb');
     fwrite($filename, $localfname);
     fclose($filename);
     
     die('DONE');
 }
 
-if (isset($_GET['type']) && $_GET['type'] == 'download')
+if (isset($_GET['type']) && $_GET['type'] === 'download')
 {
     if (!file_exists($thefiledata) || !file_exists($thefilename))
     {
-        echo '<html><head><meta content="width=device-width, initial-scale=1.0" name="viewport"><style type="text/css">*{color:white;font-family:sans-serif;padding:0em;margin:0;cursor:pointer;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}body{width:100%;top:0;position:absolute;background-color:#f90;height:100%;left:0}a{position:absolute;top:0;height:100%;text-align:center;width:100%;text-decoration:none;display:block}a div{position:relative;top:45%;height:auto;text-align:center;width:100%;font-size:2.5em;text-decoration:none}a span{font-size:70%}</style><title></title></head><body> <a href="./"><div>NO FILE UPLOADED YET<br /><span>CLICK TO RELOAD</span></div></a></body></html>';
+        echo '<html><head><meta content="width=device-width, initial-scale=1.0" name="viewport"><style type="text/css">*{color:white;font-family:sans-serif;padding:0;margin:0;cursor:pointer;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}body{width:100%;top:0;position:absolute;background-color:#f90;height:100%;left:0}a{position:absolute;top:0;height:100%;text-align:center;width:100%;text-decoration:none;display:block}a div{position:relative;top:45%;height:auto;text-align:center;width:100%;font-size:2.5em;text-decoration:none}a span{font-size:70%}</style><title></title></head><body> <a href="./"><div>NO FILE UPLOADED YET<br /><span>CLICK TO RELOAD</span></div></a></body></html>';
         exit;
     }
     $fname = file_get_contents($thefilename);
@@ -77,7 +77,7 @@ if (isset($_GET['type']) && $_GET['type'] == 'download')
 <input type='file' id='file' />  
 <div id="upload"><div class="text" id="uploadtext">UPLOAD</div></div>
 <a href="index.php?type=download" id="download"><div class="text">DOWNLOAD</div></a>
-<input id="email_addr" type="text" name="email" size="25" value="" autocomplete="off" />
+<input id="email_addr" name="email" size="25" value="" autocomplete="off" />
 <script>
 var upload = document.getElementById('upload');
 var uploadtext = document.getElementById('uploadtext');
@@ -99,7 +99,6 @@ function readfiles(files) {
     xhr.upload.onprogress = function(event) {
         if (event.lengthComputable) {
             var complete = (event.loaded / event.total * 100 | 0);
-            var complete36 = (event.loaded / event.total * 36 | 0);
             uploadtext.innerHTML = 'UPLOADING<br>PROGRESS '+ complete + '%';
         }
     };
@@ -110,7 +109,7 @@ document.body.ondragover = function() { uploadtext.innerHTML = 'DROP YOUR FILE H
 
 document.body.ondrop = function(e) { e.preventDefault();  readfiles(e.dataTransfer.files); };
 
-fileelt.addEventListener("change", function(e) { readfiles(fileelt.files); })
+fileelt.addEventListener("change", function() { readfiles(fileelt.files); })
 </script>
 </body>
 </html>
