@@ -69,3 +69,4 @@ Other projects: [BigPicture](http://bigpicture.bi), [bigpicture.js](https://gith
 License
 ----
 MIT license
+![](https://gget.it/pixel/yopp.png)
