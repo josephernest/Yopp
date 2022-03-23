@@ -53,7 +53,7 @@ where `a` is the number of required actions/user inputs. If the number of requir
 What about security?
 ----
 
-* There's no security, so everyone who has the URL can download your last file (well, not if you downloaded it, because then it will be automatically deleted on server). Why? Because sometimes you just want a quick solution for non-sensitive/personal data, rather than a super secure solution that would take 2 minutes (go to Gmail on phone, enter login, enter password, upload file, go to Gmail on computer, enter login, enter password, download the file...)
+* Everyone who has the URL can download your last file (well, not if you downloaded it, because then it will be automatically deleted on server). Why? Because sometimes you just want a quick solution for non-sensitive/personal data, rather than a super secure solution that would take 2 minutes (go to your mailbox on the phone, enter login, enter password, upload file, go to your mailbox on computer, enter login, enter password, download the file...)
 
 * Tip: use a random folder name (e.g. http://www.example.com/xHsy279q1/), and don't share the URL
 
