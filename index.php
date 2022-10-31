@@ -10,6 +10,7 @@
 $maxsize = 50*1024*1024;       // 50 MB
 $thefiledata = 'thefiledata';  // file which contains the data
 $thefilename = 'thefilename';  // file which contains only the filename
+$thefilecode = 'thefilecode';  // file which contains code 
 $autoeraseafterdownload = 1;   // delete file after a download
 
 if (isset($_POST['type']) && $_POST['type'] === 'upload')
@@ -30,8 +31,14 @@ if (isset($_POST['type']) && $_POST['type'] === 'upload')
     $filename = fopen($thefilename, 'wb');
     fwrite($filename, $localfname);
     fclose($filename);
+
+    // generate random 4-digit code and store it
+    $randomcode = rand(1000,9999);
+    $filecode = fopen($thefilecode, 'w');
+    fwrite($filecode, $randomcode);
+    fclose($filecode);
     
-    die('DONE');
+    die('DONE<br>' . 'Code : ' . $randomcode);
 }
 
 if (isset($_GET['type']) && $_GET['type'] === 'download')
@@ -40,21 +47,9 @@ if (isset($_GET['type']) && $_GET['type'] === 'download')
     {
         echo '<html><head><meta content="width=device-width, initial-scale=1.0" name="viewport"><style type="text/css">*{color:white;font-family:sans-serif;padding:0;margin:0;cursor:pointer;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}body{width:100%;top:0;position:absolute;background-color:#f90;height:100%;left:0}a{position:absolute;top:0;height:100%;text-align:center;width:100%;text-decoration:none;display:block}a div{position:relative;top:45%;height:auto;text-align:center;width:100%;font-size:2.5em;text-decoration:none}a span{font-size:70%}</style><title></title></head><body> <a href="./"><div>NO FILE UPLOADED YET<br /><span>CLICK TO RELOAD</span></div></a></body></html>';
         exit;
-    }
-    $fname = file_get_contents($thefilename);
-    header('Content-Description: File Transfer');
-    header('Content-Type: application/octet-stream');
-    header('Content-Disposition: attachment; filename="' . $fname . '"');
-    header('Expires: 0');
-    header('Cache-Control: must-revalidate');
-    header('Pragma: public');
-    header('Content-Length: ' . filesize($thefiledata));
-    readfile($thefiledata);
-
-    if ($autoeraseafterdownload) 
-    {
-        unlink($thefiledata);
-        unlink($thefilename);
+    }else {
+        // Redirects to download.php
+        header("location:download.php");
     }
     exit;
 }
